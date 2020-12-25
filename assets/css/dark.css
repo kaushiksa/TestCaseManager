@@ -1,0 +1,37 @@
+body,
+.swal2-popup,
+.modal-content,
+input,
+.datepicker-dropdown,
+th{
+    background-color: #495057 !important;
+}
+
+span,
+title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+i,
+a,
+button,
+ul,
+li,
+ol,
+th,
+td,
+input,
+label,
+.custom-file-label{
+
+    color: white !important;
+}
+
+button{
+    background-color: #a9a9b991 !important;
+    border-color: #ffffff78 !important;
+}

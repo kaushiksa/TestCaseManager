@@ -1,0 +1,119 @@
+.header-dark {
+}
+
+.cursorPointer{
+    cursor: pointer;
+}
+.previewImage{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 100%;
+    max-height: 50px;
+}
+
+
+  
+.previewImage:hover {opacity: 0.7;}
+  
+  /* The Modal (background) */
+  .modal {
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.205); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (Image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation - Zoom in the Modal */
+  .modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+  .testCaseRow{
+    cursor: pointer;
+  }
+
+  .datepicker{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .fixed-content {
+    top: 0;
+    bottom:0;
+    position: relative;;
+    overflow-y:auto;
+    overflow-x:hidden;
+    width: 100%;
+}
+
+th {
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+  /* box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4); */
+  border: black;
+}
+
+.cPL-4{
+  padding-left: 4px !important;
+}
+.cPL-0 {
+  padding-left: 0px !important;
+}
+
+.cML-15{
+  margin-left: 15px !important;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "test-case-manager",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Kaushik S Arakalgud",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^11.0.1"
+  },
+  "dependencies": {
+    "mousetrap": "^1.6.5",
+    "pouchdb": "^7.2.2",
+    "sweetalert2": "^10.10.3"
+  }
+}

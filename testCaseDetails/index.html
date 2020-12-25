@@ -1,0 +1,94 @@
+
+    <div id='testCaseNameDiv' class='p-5' >
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 id='testCaseName' style="align-content: center;text-align: center;">Test Case Edit</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container p-3">
+                <div class="row">
+                    <div class="col-md-2 ml-5 mr-5"><button class="btn btn-primary float-left" id='btnBacktestCaseDetails' type="button"><i class="fa fa-arrow-left" aria-hidden="true"></i></button></div>
+                    <div class="col-md-6 ml-5 mr-5"><button class="btn btn-primary float-right" onclick="editSaveTestCase()" id='editSaveTestCaseBtn' type="button" editMode='false'>Edit</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <label class="control-label col-md-2 ml-5 mr-5" for="name">Name</label>
+
+        <div class="form-group col-md-6 ml-5 mr-5">
+
+            <input type="text" id="name" name="name" class="form-control contentEditable" disabled>
+
+            <span class="input-group-addon">
+            </span>
+            
+          </div>
+    </div>
+    <div class="row">
+        <label class="control-label col-md-2 ml-5 mr-5" for="description">Description</label>
+
+        <div class="form-group col-md-6 ml-5 mr-5">
+
+            <textarea  id="description" name="description" class="form-control contentEditable" disabled></textarea>
+            
+          </div>
+    </div>
+    <div class="row">
+        <label class="control-label col-md-2 ml-5 mr-5" for="performedDate">Date Performed</label>
+
+        <div class="form-group date datepicker col-md-6 ml-5 mr-5">
+
+            <input type="text" id="performedDate" name="performedDate" class="form-control contentEditable" disabled>
+
+            <span class="input-group-addon">
+            </span>
+            
+          </div>
+    </div>
+    <div class="row">
+        <label class="control-label col-md-2 ml-5 mr-5" for="addedDate">Date Added</label>
+
+        <div class="form-group date datepicker col-md-6 ml-5 mr-5">
+
+            <input type="text" id="addedDate" name="addedDate" class="form-control contentEditable" disabled>
+
+            <span class="input-group-addon">
+            </span>
+            
+          </div>
+    </div>
+    <div class="row">
+        <label class="control-label col-md-2 ml-5 mr-5" for="attachment">Attachment</label>
+
+        <div class="form-group col-md-6 ml-5 mr-5">
+
+            <!-- <input type="text" id="addedDate" name="attachment" class="form-control"> -->
+        <div id='attachment'></div>
+            <span class="input-group-addon">
+            </span>
+            </div>
+            
+          </div>
+    </div>
+
+
+    
+  <!-- The Modal -->
+<div id="imagePreviewModal" class="modal">
+
+    <!-- The Close Button -->
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+  
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="imagePreview">
+  
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+  </div>
+  

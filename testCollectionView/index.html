@@ -1,0 +1,111 @@
+
+    <div id='testCollectionView' class='p-5' >
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 id='collectionDisplayName' style="align-content: center;text-align: center;">Test Collection</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-md-2"><button class="btn btn-primary float-left" onclick="openHomePage();" type="button"><i class="fa fa-arrow-left" aria-hidden="true"></i></button></div>
+                <div class="col-md-8"><button class="btn btn-primary float-right" onclick="btnAddNewTestCase()" type="button">New Test Case</button></div>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <div >
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date Performed</th>
+                    <th>Date Added</th>
+                    <th>Attachment</th>
+                </tr>
+            </thead>
+            <tbody id='testCaselist'>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal" id="addNewTestCase">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add Test Case</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form class="form-horizontal" >
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="testCaseName">Test Case Name</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" id="testCaseName" placeholder="Enter Name">
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="testCaseDescription">Test Case Description</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="testCaseDescription" placeholder="Enter Name">
+                    </div>
+                </div>
+
+                <div class="form-group date datepicker cPL-0">
+                    <label class="control-label col-sm-4" for="performedDate">Date Performed</label>
+                    <div class="col-sm-8">
+
+                    <input type="text" id="performedDate" name="performedDate" class="form-control">
+
+                    <span class="input-group-addon">
+                    </span>
+                    </div>
+                    
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" >Attachment</label>
+                    <div class="col-sm-8 cML-15">
+
+                    <input type="file" class="custom-file-input" id="attachment">
+                    <label class="custom-file-label" for="attachment">Choose File</label>
+
+                    </div>
+                    
+                  </div>
+            </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="btnSaveNewTestCase()" data-dismiss="modal">Save</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
+  <!-- The Modal -->
+<div id="imagePreviewModal" class="modal">
+
+  <!-- The Close Button -->
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="imagePreview">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
