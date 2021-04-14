@@ -88,6 +88,9 @@ const template = [
   }
 ]
 
+const {remote} = require('electron')
+const Menu = remote.Menu;
+const app = remote.app;
 const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
 app.on('ready', createWindow)

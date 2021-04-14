@@ -35,3 +35,8 @@ button{
     background-color: #a9a9b991 !important;
     border-color: #ffffff78 !important;
 }
+
+.statusColor input[type="radio"]:checked + label {
+
+    border-color: white;
+  }

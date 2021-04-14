@@ -117,3 +117,52 @@ th {
 .cML-15{
   margin-left: 15px !important;
 }
+
+.logoText{
+  display: block;
+  margin-top: -20px;
+  writing-mode: vertical-lr;
+}
+.logoNumber{
+  font-size: 16px;
+}
+.logo{
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.settingsColorStatus{
+  font-size:45px;
+}
+
+
+.statusColor {
+  list-style-type:none;
+  padding: 0;
+  writing-mode: vertical-lr;
+}
+
+.statusColor input[type="radio"] {
+  opacity:0.011;
+  z-index:100;
+  display: contents;
+ }
+
+ .statusColor input[type="radio"]:checked + label {
+  border-style: solid;
+  border-radius: 25%;
+  border-color: black;
+}
+
+
+.statusNameDisplayStyle{
+  padding-right: 5%;
+  font-size: small;
+}
+
+.statusColorPreview{
+  float: right;
+  font-size: 20px;
+}

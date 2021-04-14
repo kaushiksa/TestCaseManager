@@ -28,6 +28,7 @@
                     <th>Date Performed</th>
                     <th>Date Added</th>
                     <th>Attachment</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody id='testCaselist'>
@@ -80,6 +81,35 @@
 
                     <input type="file" class="custom-file-input" id="attachment">
                     <label class="custom-file-label" for="attachment">Choose File</label>
+
+                    </div>
+                    
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="testCaseDescription">Status</label>
+                    <div class="col-sm-6">
+                      <ul class="statusColor">
+                        <li>
+                            <input type="radio" id="greenColorName" name="colorStatus" value='greenColor'/>
+                            <label class="fa fa-square settingsColorStatus" style="color:green !important" for="greenColorName"></label>
+                        </li>
+                        <li>
+                            <input type="radio" id="yellowColorName" name="colorStatus" value='yellowColor'/>
+                            <label  class="fa fa-square settingsColorStatus" style="color:yellow !important" for="yellowColorName"</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="redColorName" name="colorStatus" checked="checked" value='redColor'/>
+                            <label class="fa fa-square settingsColorStatus" style="color:red !important" for="redColorName"></label>
+                        </li>
+                        <li>
+                            <input type="radio" id="blueColorName" name="colorStatus" value='blueColor'/>
+                            <label class="fa fa-square settingsColorStatus" style="color:blue !important" for="blueColorName"></label>
+                        </li>
+                        
+                        </ul>
+                      <label><span id='statusName'>Status</span></label>
 
                     </div>
                     

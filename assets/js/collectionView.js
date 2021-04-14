@@ -28,10 +28,17 @@ function createColumnForTestCaseRow(idName ,ColData, dType='text'){
 
     col.innerHTML = '<i class="fa fa-picture-o" aria-hidden="true"></i>'
   }
+  else if(dType == 'statusIcon'){
+    let htmlcolor = getHTMLColorNameForStatusColorCode(ColData);
+    col.innerHTML = '<span class="statusNameDisplayStyle" >'+getStatusNameForStatusColor(ColData)+'</span><i  class="fa fa-square statusColorPreview" style ="color: '+htmlcolor+' !important;"></i>';
+    // col.innerHTML = '<i data-toggle="tooltip" data-placement="bottom" title="'+getStatusNameForStatusColor(ColData)+'" class="fa fa-square settingsColorStatus" aria-hidden="true" style="color:'+htmlcolor+' !important;"></i>'
+    
+
+  }
   return col;
 
 }
-function createTestCaseRow(tNum, tName, tDescription, tPerform, tAdd, tAttachment){
+function createTestCaseRow(tNum, tName, tDescription, tPerform, tAdd, tAttachment, tStatus){
 
   let testCaseList = document.getElementById('testCaselist');
   let row = document.createElement('tr');
@@ -42,6 +49,7 @@ function createTestCaseRow(tNum, tName, tDescription, tPerform, tAdd, tAttachmen
                     colDatePerformed:{element:null,value:tPerform,type:'text',idName : 'colDatePerform'+String(tNum)},
                     colDateAdded:{element:null,value:tAdd,type:'text',idName : 'colDateAdded'+String(tNum)},
                     colAttachment:{element:null,value:tAttachment,class:null,type:'iconImg',idName : 'colAttach'+String(tNum)},                    
+                    colStatus:{element:null,value:tStatus,class:null,type:'statusIcon',idName : 'colStatus'+String(tNum)},                    
                   };
 
 
@@ -97,6 +105,29 @@ function getTestCasesForCollection(collectionID){
   });
 }
 
+function getHTMLColorNameForStatusColorCode(colorCode){
+  switch(colorCode){
+
+    case 'redColor':
+      return 'red';
+
+    case 'greenColor':
+      return 'green';
+
+
+    case 'yellowColor':
+      return 'yellow';
+
+
+    case 'blueColor':
+      return 'blue';
+
+
+
+  }
+
+}
+
 function updateAttachmentFieldInRow(data,testCaseID = null){
   let columnID = 'colAttach'+String(testCaseID);
   let colElem = $('#'+columnID);
@@ -136,7 +167,7 @@ function loadTestCasesForCollection(collectionID){
     // loadTestCollectionsInHome(collections.collectionNames);
     if(testCasesList.docs.length){
       testCasesList.docs.forEach(element => {
-        createTestCaseRow(element._id,element.name,element.description,element.performed,element.added,element.attachment);
+        createTestCaseRow(element._id,element.name,element.description,element.performed,element.added,element.attachment,element.status);
         getAttachmentsForTestCase(element._id,updateAttachmentFieldInRow)
       });
     }
@@ -159,7 +190,7 @@ function loadTestCasesForCollection(collectionID){
   
 }
 
-function addNewTestCaseInDB(tName, tDescription, tPerform, tAdd, tAttachment, collectionID){
+function addNewTestCaseInDB(tName, tDescription, tPerform, tAdd, tAttachment, tStatus, collectionID){
 
       testCasesDB.info().then(function(info){
         let dbPutData = {
@@ -169,6 +200,7 @@ function addNewTestCaseInDB(tName, tDescription, tPerform, tAdd, tAttachment, co
           description:String(tDescription),
           performed: tPerform,
           added : tAdd,
+          status: tStatus,
         }
         if(tAttachment){
           dbPutData._attachments = {
@@ -200,6 +232,28 @@ function btnAddNewTestCase(){
   })
   $('#addNewTestCase').modal();
   $('#testCaseName').focus();
+  changeColorNamesInAddTestCase();
+  $('[name=colorStatus]').on('change', function() {
+    changeColorNamesInAddTestCase();
+ });
+
+}
+
+function changeColorNamesInAddTestCase(){
+  $('#statusName').html(getStatusNameForStatusColor(getSelectedStatusColorCodeInAddTestCase()));
+}
+
+function getSelectedStatusColorCodeInAddTestCase(){
+    return $('input[name=colorStatus]:checked').val();
+}
+
+function getStatusNameForStatusColor(statusColor){
+  try{
+    return gColorStatusNames[statusColor];
+  }
+  catch(err){
+    return false;
+  }
 }
 
 function btnSaveNewTestCase(){
@@ -214,9 +268,9 @@ function btnSaveNewTestCase(){
   let dd = String(today.getDate()).padStart(2, '0');
   let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   let yyyy = today.getFullYear();
-
+  let gStatusColor = getSelectedStatusColorCodeInAddTestCase();
   today = dd + '/' + mm + '/' + yyyy;
-  addNewTestCaseInDB(testCaseName,testCaseDescription,performedDate,today,attachment,gCollectionID);
+  addNewTestCaseInDB(testCaseName,testCaseDescription,performedDate,today,attachment,gStatusColor,gCollectionID);
 
 }
 

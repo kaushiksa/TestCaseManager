@@ -1,4 +1,6 @@
 
+var gColorStatusNames = null;
+
 document.addEventListener("DOMContentLoaded", function(event) { 
 
 // Common global declarations
@@ -44,47 +46,8 @@ function openCollectionViewPage(collectionID){
 }
 
 
-function cancelSettingsChange(){
-    openHomePage();
-}
-function saveSettingsChange(){
-    let theme = saveThemeChanges();
-    let displayName = getDisplayName();
-    saveUserProfileInDB(theme,displayName);
-    // openHomePage();
-}
-function getDisplayName(){
-    return document.getElementById('displayName').value;
-}
-function saveThemeChanges(){
-    if(document.getElementById("darkTheme").checked){
-        nativeTheme.themeSource = "dark"; 
-        loadCSS("dark");
-        return('dark');
-    }
-    else if(document.getElementById("lightTheme").checked){
-        nativeTheme.themeSource = "light"; 
-        loadCSS("light");
-        return('light');
-    }
-}
 
-function loadSettingsPage(){
-    // window.addEventListener('PageLoaded', () => {
-        onSettingsLoadThemeRadioBtn();
-        document.getElementById('displayName').value=gDisplayName;
-    // });
-}
 
-function onSettingsLoadThemeRadioBtn(){
-   if(nativeTheme.themeSource == "dark"){
-    document.getElementById("darkTheme").checked = true;
-   }
-   else if(nativeTheme.themeSource == "light"){
-    document.getElementById("lightTheme").checked = true;
-   }
-}
-var gDisplayName = "";
 
 function loadUserProfile(){
     userProfile.get('userProfile').catch(function (err) {
@@ -93,6 +56,12 @@ function loadUserProfile(){
                 _id: 'userProfile',
                 theme: 'dark',
                 name: null,
+                statusColors : {
+                  'redColor':'RED',
+                  'greenColor':'GREEN',
+                  'yellowColor':'YELLOW',
+                  'blueColor':'BLUE',
+                }
     
               };
             userProfile.put(profile);
@@ -101,11 +70,14 @@ function loadUserProfile(){
           throw err;
         }
       }).then(function (userProfile) {
-        applyTheme(userProfile.theme);
+        applyUserProfile(userProfile.theme);
         if(userProfile.name){
             gDisplayName = userProfile.name;
             updateDisplayNameInUI(userProfile.name);
 
+        }
+        if(userProfile.statusColors){
+          gColorStatusNames = userProfile.statusColors;
         }
 
     }).catch(function (err) {
@@ -128,18 +100,7 @@ function updateDisplayNameInUI(name){
 
 
 
-function saveUserProfileInDB(themeName,displayName){
-    userProfile.get('userProfile').then(function(doc) {
-        doc.theme = themeName;
-        doc.name = displayName;
-        return userProfile.put(doc);
-      }).then(function(response) {
-        // handle response
-      }).catch(function (err) {
-        console.log(err);
-      });
-}
-function applyTheme(themeName){
+function applyUserProfile(themeName){
 
     if(themeName == 'light'){
         nativeTheme.themeSource = "light"; 

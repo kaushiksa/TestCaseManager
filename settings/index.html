@@ -1,37 +1,77 @@
-
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 style="font-size: 31px;text-align: center;padding: 16px;">Settings</h1>
-                </div>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style="font-size: 31px;text-align: center;padding: 16px;">Settings</h1>
             </div>
         </div>
     </div>
-    <div style="padding-top: 25px;">
-        <div class="container" style="margin-left: 68px;">
-            <div class="row">
-                <div class="col-md-12">
-                    <h5  >Personalize</h5>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label" >Name</label></div>
-                        <div class="col-md-6 col-xl-6"><input type="text" id='displayName' style="width: 75%;"></div>
+</div>
+<div style="padding-top: 25px;">
+    <div class="container" style="margin-left: 68px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h5>Personalize</h5>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Name</label></div>
+                    <div class="col-md-6 col-xl-6"><input type="text" id='displayName' style="width: 75%;"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Organization</label></div>
+                    <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Profile Name</label></div>
+                    <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Theme</label></div>
+                    <div class="col-md-6 col-xl-6">
+                        <div class="form-check"><input class="form-check-input" type="radio" id="lightTheme"
+                                name="themeType"><label class="form-check-label" for="lightTheme">Light</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="darkTheme"
+                                name="themeType"><label class="form-check-label" for="darkTheme">Dark</label></div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  >Organization</label></div>
-                        <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  >Profile Name</label></div>
-                        <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  >Theme</label></div>
-                        <div class="col-md-6 col-xl-6">
-                            <div class="form-check"><input class="form-check-input" type="radio" id="lightTheme" name="themeType"><label class="form-check-label" for="lightTheme">Light</label></div>
-                            <div class="form-check"><input class="form-check-input" type="radio" id="darkTheme" name="themeType"><label class="form-check-label" for="darkTheme">Dark</label></div>
+                </div>
+
+                <h5>Status Colors</h5>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Choose Status Name for
+                            Colors</label></div>
+                    <div class="col-md-6 col-xl-6">
+                        <div>
+                            <input type="text" id="redColorName" name="colorStatus" style="width: 15%;">
+                            <label for="red" style="vertical-align: middle;">
+                                <i class="fa fa-square settingsColorStatus" style="color:red !important"></i>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="text" id="greenColorName" name="colorStatus" style="width: 15%;">
+                            <label for="green" style="vertical-align: middle;">
+                                <i class="fa fa-square settingsColorStatus" style="color:green !important"></i>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="text" id="yellowColorName" name="colorStatus" style="width: 15%;">
+                            <label for="yellow" style="vertical-align: middle;">
+                                <i class="fa fa-square settingsColorStatus" style="color:yellow !important"></i>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="text" id="blueColorName" name="colorStatus" style="width: 15%;">
+                            <label for="blue" style="vertical-align: middle;">
+                                <i class="fa fa-square settingsColorStatus" style="color:blue !important"></i>
+                            </label>
                         </div>
                     </div>
+                    
+                    <!-- <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-4"></div>
+                        <div class="col-md-2 col-xl-2"><input type="text"></div>
+
+                        <div class="col-md-2 col-xl-2 float-left"><label class="col-form-label"  >Profile Name</label></div>
+                    </div> -->
+
                 </div>
             </div>
         </div>
@@ -40,38 +80,17 @@
         <div class="container" style="margin-left: 68px;">
             <div class="row">
                 <div class="col-md-12">
-                    <h5  >Configure Engine:</h5>
+                    <h5>Configure Engine:</h5>
                     <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  >Email</label></div>
+                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Email</label></div>
                         <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  >Username</label></div>
+                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Username</label></div>
                         <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  >Password</label></div>
-                        <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="padding-top: 25px;">
-        <div class="container" style="margin-left: 68px;">
-            <div class="row">
-                <div class="col-md-12">
-                    <h5  >Configure Remote Server:</h5>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  >Server Details</label></div>
-                        <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  >Username</label></div>
-                        <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  >Password</label></div>
+                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Password</label></div>
                         <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
                     </div>
                 </div>
@@ -82,9 +101,34 @@
         <div class="container" style="margin-left: 68px;">
             <div class="row">
                 <div class="col-md-12">
+                    <h5>Configure Remote Server:</h5>
                     <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"  ></label></div>
-                        <div class="col-md-6 col-xl-6"><button class="btn btn-primary" type="button" onclick="cancelSettingsChange();">Back</button><button class="btn btn-primary" type="button" onclick="saveSettingsChange()" style="margin-left: 40px;">Save</button></div>
+                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Server Details</label>
+                        </div>
+                        <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Username</label></div>
+                        <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label">Password</label></div>
+                        <div class="col-md-6 col-xl-6"><input type="text" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-top: 25px;">
+        <div class="container" style="margin-left: 68px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-4"><label class="col-form-label"></label></div>
+                        <div class="col-md-6 col-xl-6"><button class="btn btn-primary" type="button"
+                                onclick="cancelSettingsChange();">Back</button><button class="btn btn-primary"
+                                type="button" onclick="saveSettingsChange()" style="margin-left: 40px;">Save</button>
+                        </div>
                     </div>
                 </div>
             </div>
